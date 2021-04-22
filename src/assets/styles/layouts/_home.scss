@@ -1,0 +1,145 @@
+@font-face {
+  font-family: 'Cenobyte';
+  src: url('../fonts/cenobyte.ttf');
+}
+
+.body-home {
+  background-color: $primary-bg-home;
+}
+
+.portada-container {
+  margin-left: 40px;
+  margin-right: 40px;
+  color: $primary-home-font;
+}
+
+.portada-container > div {
+  &:nth-child(3) { 
+    display: block;
+  }
+}
+
+.portada__biography {
+  text-align: justify;
+}
+
+.portada__band-name {
+  font-family: $font-family-band-name;
+  font-weight: bold;
+  font-size: 50px;
+  color: $primary-home-font-contrast;
+  letter-spacing: 15px;
+  text-shadow: -1px 1px 0 $primary-home-font;
+  text-align: center;
+  width: 100%;
+}
+
+.portada__microphone {
+  display: none;
+}
+
+//parpadeo
+.portada__blink {
+  animation-name: parpadeo;
+  animation-duration: 5s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+@keyframes parpadeo {  
+  0% { opacity: 1; }
+  50% { opacity: 0.1; }
+  100% { opacity: 1; }
+}
+
+//fade in
+.portada__phrase {
+  // text-align: center;
+  font-family: $font-family-signature;
+  font-size: 30px;
+  // margin: 10px 0 0 10px;
+  white-space: nowrap;
+  overflow: hidden;
+  width: 100%;
+  animation: fadeIn 4s steps(60, end);    
+}
+
+@keyframes fadeIn {
+  from { width: 0; } 
+}
+
+
+@supports (display:grid) {
+  @media (min-width: 760px) {
+    .portada-container {
+      color: $primary-home-font;
+      height: 85vh;
+      border: 1px solid $primary-bg-home;
+      grid-gap: 5px;
+      padding: 5px;
+      background: url('/src/assets/images/arcana_dark.jpg') no-repeat;
+      background-size: cover;
+      display: grid;
+      grid-template-columns: auto 1fr 2fr 1fr;
+      grid-template-rows: auto 1fr auto auto;
+    }
+
+    .portada-container > div {
+      padding: 10px 0;
+
+      &:nth-child(3) { 
+        display: none;
+      }
+    }
+
+    .portada__biography {
+      grid-column-start: 4;
+      grid-row-end: span 3;
+      transform: rotate(-1deg);
+    }
+
+    .portada__read-more {
+      display: block;
+      border-top: 3px solid $primary-home-font-contrast;
+      border-bottom: 3px solid $primary-home-font-contrast;
+      transform: rotate(-1deg);
+      font-weight: bold;
+    }
+
+    .portada__band-name {
+      grid-row-start: 1;
+      grid-column-start: span 3;
+      font-size: 120px;
+      letter-spacing: 25px;
+    }
+
+    .portada__microphone {
+      display: inline-block;
+      grid-row-start: 2;
+    }
+
+    .portada__promo {
+      grid-row-start: 2;
+      grid-column-start: 2;
+      
+      i {
+        display: none;
+      }
+    }
+
+    .portada__phrase {
+      grid-row-start: 3;
+      grid-column: 2 / span 2;
+      align-self: flex-start;
+      font-size: 50px;    
+    }
+
+    .portada__spikes {
+      background: url('/src/assets/images/alambrePuas.png') repeat-x;
+      background-size: auto;
+      grid-row-start: 4;
+      grid-column-start: span 4;
+
+      height: 80px;
+    }
+  }
+}

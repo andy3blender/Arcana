@@ -1,0 +1,24 @@
+@use 'sass:color';
+
+$font-family-main: 'Ubuntu', sans-serif;
+$font-family-band-name: 'Cenobyte', sans-serif;
+$font-family-signature: 'Sacramento', cursive;
+
+//varibales para pagina home
+$primary-bg-home: #000;
+$primary-home-font: #fff;
+$primary-home-font-contrast: #f00;
+
+//variables para demas paginas
+$primary-bg-shared: #0c0c22;
+$primary-shared-font: #aaa6ca;
+
+$secondary-bg-light: #ededee;
+$secondary-bg-dark: #0a3143;
+$secondary-bg-contrast: #f2aa1f;
+
+//Cambios en temas de boostrap
+$list-group-color: $primary-shared-font;
+$list-group-border-color: $primary-shared-font;
+$list-group-bg: transparent;
+$accordion-bg: $secondary-bg-light;
